@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 RUN apt-get update \
     && apt-get -y upgrade \
     && apt-get -y install \
-             make g++ gcc cmake git libx11-dev libxpm-dev libxft-dev libxext-dev python lsb-release \
+             make g++ gcc cmake git libx11-dev libxpm-dev libxft-dev libxext-dev python lsb-release locales \
     && rm -rf /var/lib/apt/lists/* \
 # General build area
     && mkdir /root-build && mkdir /root-build/build \ 
