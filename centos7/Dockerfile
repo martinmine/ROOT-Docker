@@ -16,7 +16,7 @@ RUN yum update -y \
     && git clone https://github.com/root-project/rootspi.git /root-build/rootspi \ 
     && git clone https://github.com/root-project/roottest.git /root-build/root
 # Build ROOT
-#    && LABEL=centos7 COMPILER=gcc62 BUILDTYPE=release EXTERNALS=docker BUILDTYPE=experimental /root-build/rootspi/jenkins/jk-all
+#    && LABEL=centos7 COMPILER=native BUILDTYPE=Release EXTERNALS=docker MODE=experimental /root-build/rootspi/jenkins/jk-all
 
 RUN    cd /root-build/build && cmake ../root
 
