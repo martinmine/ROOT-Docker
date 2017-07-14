@@ -11,5 +11,10 @@ RUN yum install -y libX11-devel libXpm libXpm-devel libXft-devel libXext-devel
 RUN yum groupinstall -y "Development tools"
 
 # General build area
-RUN mkdir /build && mkdir /build/build
-RUN cd /build && git clone https://github.com/root-project/root.git
+RUN mkdir /root-build && mkdir /root-build/build
+
+# Clone repos
+RUN git clone https://github.com/root-project/root.git /root-build/root
+
+# Build ROOT
+RUN cd /root-build/build && cmake ../root && make -j8
