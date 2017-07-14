@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 RUN apt-get update \
     && apt-get -y upgrade \
     && apt-get -y install \
-             make g++ gcc cmake git libx11-dev libxpm-dev libxft-dev libxext-dev python \
+             make g++ gcc cmake git libx11-dev libxpm-dev libxft-dev libxext-dev python lsb-release \
     && rm -rf /var/lib/apt/lists/* \
 # General build area
     && mkdir /root-build && mkdir /root-build/build \ 
@@ -12,7 +12,7 @@ RUN apt-get update \
     && git clone https://github.com/root-project/rootspi.git /root-build/rootspi \ 
     && git clone https://github.com/root-project/roottest.git /root-build/roottest
 # Build ROOT
-RUN cd /root-build/build \ 
+RUN cd /root-build \ 
     && LABEL=ubuntu16 COMPILER=native BUILDTYPE=Release EXTERNALS=docker MODE=experimental /root-build/rootspi/jenkins/jk-all
 # TODO: Install & cleanup stuff
 
