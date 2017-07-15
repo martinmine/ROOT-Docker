@@ -11,9 +11,9 @@ RUN apt-get update \
 # Clone repos
     && git clone https://github.com/root-project/root.git /root-build/root \ 
     && git clone https://github.com/root-project/rootspi.git /root-build/rootspi \ 
-    && git clone https://github.com/root-project/roottest.git /root-build/roottest
+    && git clone https://github.com/root-project/roottest.git /root-build/roottest \ 
 # Build ROOT
-RUN cd /root-build \ 
+    && cd /root-build \ 
     && LABEL=ubuntu16 COMPILER=native BUILDTYPE=Release EXTERNALS=docker MODE=experimental JENKINS_HOME=/tmp rootspi/jenkins/jk-all
 # TODO: Install & cleanup stuff
 
