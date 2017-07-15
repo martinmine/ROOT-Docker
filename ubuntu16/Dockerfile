@@ -7,7 +7,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && localedef -i en_US -f UTF-8 en_US.UTF-8 \
 # General build area
-    && mkdir /root-build && mkdir /root-build/build \ 
+    && mkdir /root-build \ 
 # Clone repos
     && git clone https://github.com/root-project/root.git /root-build/root \ 
     && git clone https://github.com/root-project/rootspi.git /root-build/rootspi \ 
