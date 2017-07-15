@@ -14,7 +14,7 @@ RUN apt-get update \
     && git clone https://github.com/root-project/roottest.git /root-build/roottest
 # Build ROOT
 RUN cd /root-build \ 
-    && LABEL=ubuntu16 COMPILER=native BUILDTYPE=Release EXTERNALS=docker MODE=experimental /root-build/rootspi/jenkins/jk-all
+    && LABEL=ubuntu16 COMPILER=native BUILDTYPE=Release EXTERNALS=docker MODE=experimental rootspi/jenkins/jk-all
 # TODO: Install & cleanup stuff
 
 CMD /root-build/build/bin/root.exe
