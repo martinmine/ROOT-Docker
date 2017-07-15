@@ -12,9 +12,14 @@ RUN apt-get update \
     && git clone https://github.com/root-project/root.git /root-build/root \ 
     && git clone https://github.com/root-project/rootspi.git /root-build/rootspi \ 
     && git clone https://github.com/root-project/roottest.git /root-build/roottest \ 
-# Build ROOT
+# Build
     && cd /root-build \ 
-    && LABEL=ubuntu16 COMPILER=native BUILDTYPE=Release EXTERNALS=docker MODE=experimental JENKINS_HOME=/tmp rootspi/jenkins/jk-all
+    && LABEL=ubuntu16 COMPILER=native BUILDTYPE=Release EXTERNALS=docker MODE=experimental JENKINS_HOME=/tmp rootspi/jenkins/jk-all \ 
+# Install
+    && cmake -DCMAKE_INSTALL_PREFIX=/usr/local/root -P build/cmake_install.cmake \
+    && source /usr/local/root/thisroot.sh \ 
+# Cleanup
+    && cd / && rm -rf /root-build
 # TODO: Install & cleanup stuff
 
-CMD /root-build/build/bin/root.exe
+CMD /usr/local/root/bin/root.exe
