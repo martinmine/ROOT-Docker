@@ -5,6 +5,7 @@ RUN apt-get update \
     && apt-get -y install \
              make g++ gcc cmake git libx11-dev libxpm-dev libxft-dev libxext-dev python lsb-release locales \
     && rm -rf /var/lib/apt/lists/* \
+    && localedef -i en_US -f UTF-8 en_US.UTF-8 \
 # General build area
     && mkdir /root-build && mkdir /root-build/build \ 
 # Clone repos
