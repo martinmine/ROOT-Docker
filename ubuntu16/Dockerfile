@@ -17,9 +17,7 @@ RUN apt-get update \
     && LABEL=ubuntu16 COMPILER=native BUILDTYPE=Release EXTERNALS=docker MODE=experimental JENKINS_HOME=/tmp rootspi/jenkins/jk-all \ 
 # Install
     && cmake -DCMAKE_INSTALL_PREFIX=/usr/local/root -P build/cmake_install.cmake \
-    && source /usr/local/root/thisroot.sh \ 
 # Cleanup
     && cd / && rm -rf /root-build
-# TODO: Install & cleanup stuff
-
-CMD /usr/local/root/bin/root.exe
+    
+CMD /bin/bash -c "source /usr/local/root/thisroot.sh" && /usr/local/root/bin/root.exe
