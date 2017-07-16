@@ -20,4 +20,4 @@ RUN apt-get update \
 # Cleanup
     && cd / && rm -rf /root-build
     
-ENTRYPOINT ["/bin/bash", "-c", "source /usr/local/root/bin/thisroot.sh && /usr/local/root/bin/root.exe"]
+CMD ["/bin/bash", "-c", "source /usr/local/root/bin/thisroot.sh && /usr/local/root/bin/root.exe"]
