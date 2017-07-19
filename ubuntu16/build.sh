@@ -16,11 +16,22 @@ mkdir /root-build
 git clone https://github.com/root-project/rootspi.git /root-build/rootspi
 git clone https://github.com/root-project/root.git -b $BRANCH /root-build/root
 git clone https://github.com/root-project/roottest.git -b $BRANCH /root-build/roottest
-# Build
+# Setup build env
 cd /root-build
+
 export CCACHE_DIR=/ccache
+export JENKINS_HOME=/tmp
+export EXTERNALS=docker
+
+export MODE=experimental
 export ExtraCMakeOptions=-Dccache=ON
-LABEL=ubuntu16 COMPILER=native BUILDTYPE=Release EXTERNALS=docker MODE=experimental JENKINS_HOME=/tmp rootspi/jenkins/jk-all
+
+export LABEL
+export COMPILER
+export BUILDTYPE
+
+# Build
+rootspi/jenkins/jk-all
 # Install
 cmake -DCMAKE_INSTALL_PREFIX=/usr/local/root -P build/cmake_install.cmake
 # Cleanup
