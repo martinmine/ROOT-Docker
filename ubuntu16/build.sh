@@ -11,11 +11,11 @@ else
 fi
 
 # Build environment
-mkdir /root-build
+#mkdir /root-build
 # Clone repos
-git clone https://github.com/root-project/rootspi.git /root-build/rootspi
-git clone https://github.com/root-project/root.git -b $BRANCH /root-build/root
-git clone https://github.com/root-project/roottest.git -b $BRANCH /root-build/roottest
+#git clone https://github.com/root-project/rootspi.git /root-build/rootspi
+#git clone https://github.com/root-project/root.git -b $BRANCH /root-build/root
+#git clone https://github.com/root-project/roottest.git -b $BRANCH /root-build/roottest
 # Setup build env
 cd /root-build
 
