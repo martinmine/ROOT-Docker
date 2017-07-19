@@ -10,12 +10,6 @@ else
   exit 1
 fi
 
-# Build environment
-#mkdir /root-build
-# Clone repos
-#git clone https://github.com/root-project/rootspi.git /root-build/rootspi
-#git clone https://github.com/root-project/root.git -b $BRANCH /root-build/root
-#git clone https://github.com/root-project/roottest.git -b $BRANCH /root-build/roottest
 # Setup build env
 cd /root-build
 
@@ -35,4 +29,4 @@ rootspi/jenkins/jk-all
 # Install
 cmake -DCMAKE_INSTALL_PREFIX=/usr/local/root -P build/cmake_install.cmake
 # Cleanup
-cd / && rm -rf /root-build
+rm -rf /root-build/build
