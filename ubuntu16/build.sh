@@ -30,3 +30,5 @@ rootspi/jenkins/jk-all
 cmake -P build/cmake_install.cmake
 # Cleanup
 rm -rf /root-build/build
+
+echo "PATH=\"$PATH:/usr/local/root/bin\"" > /etc/environment
