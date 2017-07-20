@@ -1,6 +1,7 @@
 FROM rootproject/root-ubuntu16-base
 
 ADD build.sh /
-ENV PATH="${PATH}:/usr/local/root/bin"
+ENV PATH="/usr/local/root/bin:${PATH}"
+ENV LD_LIBRARY_PATH="/usr/local/root/lib/root"
 
-CMD "/usr/local/root/bin/root.exe"
+CMD ["/bin/bash", "-c", "root.exe"]
