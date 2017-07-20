@@ -33,3 +33,4 @@ rm -rf /root-build/build
 
 set -x
 echo "PATH=\"$PATH:/usr/local/root/bin\"" > /etc/environment
+cat /etc/environment
