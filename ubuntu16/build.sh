@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-ls /usr/lib/python2.7/plat-x86_64-linux-gnu/
+set -x
+ls -als /usr/lib/python2.7/plat-x86_64-linux-gnu/
 
 if [ $# -ge 4 ]; then
   LABEL=$1 ; shift
@@ -25,14 +26,14 @@ export LABEL
 export COMPILER
 export BUILDTYPE
 
-ls /usr/lib/python2.7/plat-x86_64-linux-gnu/
+ls -als /usr/lib/python2.7/plat-x86_64-linux-gnu/
 # Build
 rootspi/jenkins/jk-all
-ls /usr/lib/python2.7/plat-x86_64-linux-gnu/
+ls -als /usr/lib/python2.7/plat-x86_64-linux-gnu/
 # Install
 cmake -P build/cmake_install.cmake
-ls /usr/lib/python2.7/plat-x86_64-linux-gnu/
+ls -als /usr/lib/python2.7/plat-x86_64-linux-gnu/
 # Cleanup
 rm -rf /root-build/build
-ls /usr/lib/python2.7/plat-x86_64-linux-gnu/
+ls -als /usr/lib/python2.7/plat-x86_64-linux-gnu/
 
