@@ -26,14 +26,9 @@ export LABEL
 export COMPILER
 export BUILDTYPE
 
-ls -als /usr/lib/python2.7/plat-x86_64-linux-gnu/
 # Build
 rootspi/jenkins/jk-all
-ls -als /usr/lib/python2.7/plat-x86_64-linux-gnu/
 # Install
-# cmake -P build/cmake_install.cmake
-ls -als /usr/lib/python2.7/plat-x86_64-linux-gnu/
+ cmake -P build/cmake_install.cmake
 # Cleanup
-#rm -rf /root-build/build
-#ls -als /usr/lib/python2.7/plat-x86_64-linux-gnu/
-
+rm -rf /root-build/build
