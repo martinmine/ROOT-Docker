@@ -34,6 +34,6 @@ ls -als /usr/lib/python2.7/plat-x86_64-linux-gnu/
 # cmake -P build/cmake_install.cmake
 ls -als /usr/lib/python2.7/plat-x86_64-linux-gnu/
 # Cleanup
-rm -rf /root-build/build
-ls -als /usr/lib/python2.7/plat-x86_64-linux-gnu/
+#rm -rf /root-build/build
+#ls -als /usr/lib/python2.7/plat-x86_64-linux-gnu/
 
