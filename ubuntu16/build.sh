@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -x
-ls -als /usr/lib/python2.7/plat-x86_64-linux-gnu/
+set -e
 
 if [ $# -ge 4 ]; then
   LABEL=$1 ; shift
@@ -29,6 +29,6 @@ export BUILDTYPE
 # Build
 rootspi/jenkins/jk-all
 # Install
- cmake -P build/cmake_install.cmake
+cmake -P build/cmake_install.cmake
 # Cleanup
 rm -rf /root-build/build
