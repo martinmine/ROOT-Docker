@@ -30,5 +30,6 @@ export BUILDTYPE
 rootspi/jenkins/jk-all
 # Install
 cmake -P build/cmake_install.cmake
-# Cleanup
+# Stash test reports and cleanup
+cp -r /root-build/build/Testing /root-build/Testing
 rm -rf /root-build/build
