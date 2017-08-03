@@ -20,7 +20,7 @@ export JENKINS_HOME=/tmp
 export EXTERNALS=docker
 
 export MODE=experimental
-export ExtraCMakeOptions='-Dccache=ON -DCMAKE_INSTALL_PREFIX=/usr/local/root -Dgnuinstall=ON'
+export ExtraCMakeOptions='-Dccache=ON -DCMAKE_INSTALL_PREFIX=/usr/local -Dgnuinstall=ON'
 
 export LABEL
 export COMPILER
@@ -31,5 +31,5 @@ rootspi/jenkins/jk-all
 # Install
 cmake -P build/cmake_install.cmake
 # Stash test reports and cleanup
-cp -r /root-build/build/Testing /root-build/Testing
-rm -rf /root-build/build
+cp -r build/Testing Testing
+rm -rf build
