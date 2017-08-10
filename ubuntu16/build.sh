@@ -27,9 +27,11 @@ export COMPILER
 export BUILDTYPE
 
 # Build
-rootspi/jenkins/jk-all
+rootspi/jenkins/jk-all build
 # Install
 cmake -P build/cmake_install.cmake
+# Test
+rootspi/jenkins/jk-all test
 # Stash test reports and cleanup
 cp -r build/Testing Testing
 rm -rf build
