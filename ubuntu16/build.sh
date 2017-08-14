@@ -33,5 +33,6 @@ cmake -P build/cmake_install.cmake
 # Test
 rootspi/jenkins/jk-all test
 # Stash test reports and cleanup
+rm -rf Testing
 cp -r build/Testing Testing
 rm -rf build
